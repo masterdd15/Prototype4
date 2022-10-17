@@ -40,11 +40,13 @@ public class CharacterLook : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.GetComponent<ClassmateLogic>() != null) //If we are clicking a classmate
                 {
+                    ClassmateLogic cmStore = hitInfo.collider.gameObject.GetComponent<ClassmateLogic>();
+                    cmStore.StartCritic();
                     Debug.Log("Clicked on Classmate");
+                    
                 }
                 else
                 {
-                    Debug.Log("Missed them!");
                 }
             }
         }
