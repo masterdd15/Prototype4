@@ -42,7 +42,7 @@ public class CharacterLook : MonoBehaviour
                 {
                     ClassmateLogic cmStore = hitInfo.collider.gameObject.GetComponent<ClassmateLogic>();
                     cmStore.StartCritic();
-                    Debug.Log("Clicked on Classmate");
+                    //Debug.Log("Clicked on Classmate");
                     
                 }
                 else

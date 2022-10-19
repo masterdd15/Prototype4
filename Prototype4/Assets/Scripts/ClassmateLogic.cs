@@ -68,13 +68,17 @@ public class ClassmateLogic : MonoBehaviour
 
     public void StartCritic()
     {
-        StartCoroutine("AngryCritic");
+        if(handRaised && !myAudio.isPlaying)
+        {
+            StartCoroutine("AngryCritic");
+        }
     }
 
     IEnumerator AngryCritic()
     {
         LowerHand();
-        int randomGen = Random.Range(0, audioList.Count - 1);
+        int randomGen = Random.Range(0, audioList.Count);
+        Debug.Log(randomGen.ToString());
         myAudio.clip = audioList[randomGen];
         myAudio.Play();
         yield return new WaitForSeconds(myAudio.clip.length);
